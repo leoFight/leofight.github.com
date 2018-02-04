@@ -404,28 +404,28 @@
 </li>
 </ol>
 <h1 id="类的加载、连接与初始化"><a href="#类的加载、连接与初始化" class="headerlink" title="类的加载、连接与初始化"></a>类的加载、连接与初始化</h1><ol>
-<li>加载：查找并加载类的二进制数据</li>
-</ol>
+<li><p><strong>加载</strong>：查找并加载类的二进制数据</p>
 <blockquote>
 <p>类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在内存中创建一个java.lang.Class对象（规范并未说明Class对象位于哪里，HotSpot虚拟机将其放在了方法区中）用来封装类在方法区内的数据。</p>
 </blockquote>
 <ul>
 <li><p>加载.class文件的方式</p>
-<p> ①从本地系统中直接加载</p>
-<p> ②通过网络下载.class文件</p>
-<p> ③从zip，jar等归档文件中加载.class文件</p>
-<p> ④从专有数据库中提取.class文件</p>
-<p> ⑤<font color="red">将Java源文件动态编译为.class文件</font></p>
+<p>①从本地系统中直接加载</p>
+<p>②通过网络下载.class文件</p>
+<p>③从zip，jar等归档文件中加载.class文件</p>
+<p>④从专有数据库中提取.class文件</p>
+<p>⑤<font color="red">将Java源文件动态编译为.class文件</font></p>
 </li>
 </ul>
-<ol>
-<li>连接</li>
+</li>
 </ol>
-<p>   ① 验证：确保被加载的类的正确性</p>
-<p>   ②准备：为类的<font color="red">静态变量</font>分配内存，并将其初始化为<font color="red">默认值</font></p>
-<p>   ③解析：<font color="red">把类中的符号引用转换为直接引用</font></p>
 <ol>
-<li><font color="red">初始化:为类的静态变量赋予正确的初始值</font>
+<li><p><strong>连接</strong></p>
+<p>① 验证：确保被加载的类的正确性</p>
+<p>②准备：为类的<font color="red">静态变量</font>分配内存，并将其初始化为<font color="red">默认值</font></p>
+<p>③解析：<font color="red">把类中的符号引用转换为直接引用</font></p>
+</li>
+<li><font color="red"><strong>初始化</strong>:为类的静态变量赋予正确的初始值</font>
 
 
 </li>
