@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="类加载 在java代码中，类型的加载、连接与初始化过程都是在程序运行期间完成的。  提供了更大的灵活性，增加了更多的可能性。   类的加载、连接与初始化1⃣️ 加载：查找并加载类的二进制数据 &amp;gt; 类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在内存中创建一个java.lang.Class对象（规范并未说明Class对象位于哪里，HotSp">
+<meta name="description" content="类加载 在java代码中，类型的加载、连接与初始化过程都是在程序运行期间完成的。  提供了更大的灵活性，增加了更多的可能性。   类的加载、连接与初始化 1.加载：查找并加载类的二进制数据  类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在内存中创建一个java.lang.Class对象（规范并未说明Class对象位于哪里，HotSpot虚拟机">
 <meta name="keywords" content="JVM学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM学习笔记_类的加载、连接与初始化详解">
 <meta property="og:url" content="http://yoursite.com/2018/02/04/JVM学习笔记_类的加载、连接与初始化详解/index.html">
 <meta property="og:site_name" content="leofight blog">
-<meta property="og:description" content="类加载 在java代码中，类型的加载、连接与初始化过程都是在程序运行期间完成的。  提供了更大的灵活性，增加了更多的可能性。   类的加载、连接与初始化1⃣️ 加载：查找并加载类的二进制数据 &amp;gt; 类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在内存中创建一个java.lang.Class对象（规范并未说明Class对象位于哪里，HotSp">
+<meta property="og:description" content="类加载 在java代码中，类型的加载、连接与初始化过程都是在程序运行期间完成的。  提供了更大的灵活性，增加了更多的可能性。   类的加载、连接与初始化 1.加载：查找并加载类的二进制数据  类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在内存中创建一个java.lang.Class对象（规范并未说明Class对象位于哪里，HotSpot虚拟机">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9584733-6e0168c0a2c48be4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-02-04T14:19:54.927Z">
+<meta property="og:updated_time" content="2018-02-04T14:24:00.205Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM学习笔记_类的加载、连接与初始化详解">
-<meta name="twitter:description" content="类加载 在java代码中，类型的加载、连接与初始化过程都是在程序运行期间完成的。  提供了更大的灵活性，增加了更多的可能性。   类的加载、连接与初始化1⃣️ 加载：查找并加载类的二进制数据 &amp;gt; 类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在内存中创建一个java.lang.Class对象（规范并未说明Class对象位于哪里，HotSp">
+<meta name="twitter:description" content="类加载 在java代码中，类型的加载、连接与初始化过程都是在程序运行期间完成的。  提供了更大的灵活性，增加了更多的可能性。   类的加载、连接与初始化 1.加载：查找并加载类的二进制数据  类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在内存中创建一个java.lang.Class对象（规范并未说明Class对象位于哪里，HotSpot虚拟机">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/9584733-6e0168c0a2c48be4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -405,9 +405,12 @@
 <li><p>提供了更大的灵活性，增加了更多的可能性。</p>
 </li>
 </ol>
-<h1 id="类的加载、连接与初始化"><a href="#类的加载、连接与初始化" class="headerlink" title="类的加载、连接与初始化"></a>类的加载、连接与初始化</h1><p>1⃣️ <strong>加载</strong>：查找并加载类的二进制数据</p>
-<pre><code>&gt; 类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在内存中创建一个java.lang.Class对象（规范并未说明Class对象位于哪里，HotSpot虚拟机将其放在了方法区中）用来封装类在方法区内的数据。
-</code></pre><ul>
+<h1 id="类的加载、连接与初始化"><a href="#类的加载、连接与初始化" class="headerlink" title="类的加载、连接与初始化"></a>类的加载、连接与初始化</h1><ul>
+<li><p><strong>1.加载</strong>：查找并加载类的二进制数据</p>
+<blockquote>
+<p>类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在内存中创建一个java.lang.Class对象（规范并未说明Class对象位于哪里，HotSpot虚拟机将其放在了方法区中）用来封装类在方法区内的数据。</p>
+</blockquote>
+<ul>
 <li><p>加载.class文件的方式</p>
 <p> ①从本地系统中直接加载</p>
 <p> ②通过网络下载.class文件</p>
@@ -416,11 +419,19 @@
 <p> ⑤<font color="red">将Java源文件动态编译为.class文件</font></p>
 </li>
 </ul>
-<p>2⃣️ <strong>连接</strong></p>
-<p>   ① 验证：确保被加载的类的正确性</p>
-<p>   ②准备：为类的<font color="red">静态变量</font>分配内存，并将其初始化为<font color="red">默认值</font></p>
-<p>   ③解析：<font color="red">把类中的符号引用转换为直接引用</font></p>
-<p>3⃣️  <font color="red"><strong>初始化</strong>:为类的静态变量赋予正确的初始值</font></p>
+</li>
+</ul>
+<ul>
+<li><p><strong>2.连接</strong></p>
+<p>① 验证：确保被加载的类的正确性</p>
+<p>②准备：为类的<font color="red">静态变量</font>分配内存，并将其初始化为<font color="red">默认值</font></p>
+<p>③解析：<font color="red">把类中的符号引用转换为直接引用</font></p>
+</li>
+<li><font color="red"><strong>3.初始化</strong>:为类的静态变量赋予正确的初始值</font>
+
+
+</li>
+</ul>
 <p><strong>从类被加载到虚拟机内存中开始，到卸载出内存为止，它的整个生命周期分为5个阶段，加载(Loading)、连接（Linkging）、初始化(Initialization)、使用(Using)、卸御(Unloading)</strong></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/9584733-6e0168c0a2c48be4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p><strong>JAVA虚拟机与程序的生命周期</strong></p>
