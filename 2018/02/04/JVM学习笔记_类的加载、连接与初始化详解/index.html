@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="类加载 在java代码中，类型的加载、连接与初始化过程都是在程序运行期间完成的。  提供了更大的灵活性，增加了更多的可能性。   类的加载、连接与初始化 加载：查找并加载类的二进制数据  类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在内存中创建一个java.lang.Class对象（规范并未说明Class对象位于哪里，HotSpot虚拟机将其">
+<meta name="description" content="类加载 在java代码中，类型的加载、连接与初始化过程都是在程序运行期间完成的。  提供了更大的灵活性，增加了更多的可能性。   类的加载、连接与初始化 加载：查找并加载类的二进制数据   类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在内存中创建一个java.lang.Class对象（规范并未说明Class对象位于哪里，HotSpot虚拟机将">
 <meta name="keywords" content="JVM学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM学习笔记_类的加载、连接与初始化详解">
 <meta property="og:url" content="http://yoursite.com/2018/02/04/JVM学习笔记_类的加载、连接与初始化详解/index.html">
 <meta property="og:site_name" content="leofight blog">
-<meta property="og:description" content="类加载 在java代码中，类型的加载、连接与初始化过程都是在程序运行期间完成的。  提供了更大的灵活性，增加了更多的可能性。   类的加载、连接与初始化 加载：查找并加载类的二进制数据  类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在内存中创建一个java.lang.Class对象（规范并未说明Class对象位于哪里，HotSpot虚拟机将其">
+<meta property="og:description" content="类加载 在java代码中，类型的加载、连接与初始化过程都是在程序运行期间完成的。  提供了更大的灵活性，增加了更多的可能性。   类的加载、连接与初始化 加载：查找并加载类的二进制数据   类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在内存中创建一个java.lang.Class对象（规范并未说明Class对象位于哪里，HotSpot虚拟机将">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9584733-6e0168c0a2c48be4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-02-04T13:36:39.233Z">
+<meta property="og:updated_time" content="2018-02-04T13:45:16.267Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM学习笔记_类的加载、连接与初始化详解">
-<meta name="twitter:description" content="类加载 在java代码中，类型的加载、连接与初始化过程都是在程序运行期间完成的。  提供了更大的灵活性，增加了更多的可能性。   类的加载、连接与初始化 加载：查找并加载类的二进制数据  类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在内存中创建一个java.lang.Class对象（规范并未说明Class对象位于哪里，HotSpot虚拟机将其">
+<meta name="twitter:description" content="类加载 在java代码中，类型的加载、连接与初始化过程都是在程序运行期间完成的。  提供了更大的灵活性，增加了更多的可能性。   类的加载、连接与初始化 加载：查找并加载类的二进制数据   类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在内存中创建一个java.lang.Class对象（规范并未说明Class对象位于哪里，HotSpot虚拟机将">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/9584733-6e0168c0a2c48be4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -406,27 +406,27 @@
 </li>
 </ol>
 <h1 id="类的加载、连接与初始化"><a href="#类的加载、连接与初始化" class="headerlink" title="类的加载、连接与初始化"></a>类的加载、连接与初始化</h1><ol>
-<li><p>加载：查找并加载类的二进制数据</p>
+<li>加载：查找并加载类的二进制数据</li>
+</ol>
 <blockquote>
 <p>类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在内存中创建一个java.lang.Class对象（规范并未说明Class对象位于哪里，HotSpot虚拟机将其放在了方法区中）用来封装类在方法区内的数据。</p>
 </blockquote>
 <ul>
 <li><p>加载.class文件的方式</p>
-<p>①从本地系统中直接加载</p>
-<p>②通过网络下载.class文件</p>
-<p>③从zip，jar等归档文件中加载.class文件</p>
-<p>④从专有数据库中提取.class文件</p>
-<p>⑤<font color="red">将Java源文件动态编译为.class文件</font></p>
+<p> ①从本地系统中直接加载</p>
+<p> ②通过网络下载.class文件</p>
+<p> ③从zip，jar等归档文件中加载.class文件</p>
+<p> ④从专有数据库中提取.class文件</p>
+<p> ⑤<font color="red">将Java源文件动态编译为.class文件</font></p>
 </li>
 </ul>
-</li>
-</ol>
 <ol>
-<li><p>连接</p>
-<p>① 验证：确保被加载的类的正确性</p>
-<p>②准备：为类的<font color="red">静态变量</font>分配内存，并将其初始化为<font color="red">默认值</font></p>
-<p>③解析：<font color="red">把类中的符号引用转换为直接引用</font></p>
-</li>
+<li>连接</li>
+</ol>
+<p>   ① 验证：确保被加载的类的正确性</p>
+<p>   ②准备：为类的<font color="red">静态变量</font>分配内存，并将其初始化为<font color="red">默认值</font></p>
+<p>   ③解析：<font color="red">把类中的符号引用转换为直接引用</font></p>
+<ol>
 <li><font color="red">初始化:为类的静态变量赋予正确的初始值</font>
 
 
@@ -455,9 +455,9 @@
 </li>
 <li><p>被动使用</p>
 <p>① 除了以上七种情况，其他使用Java类的方式都被看作是对类的<font color="red">被动使用</font>，都不会导致类的<font color="red">初始化</font></p>
+<p>② 所有的Java虚拟机实现必须在每个类或接口被Java”<font color="red">首次主动使用</font>时才初始化他们</p>
 </li>
 </ol>
-<p> ② 所有的Java虚拟机实现必须在每个类或接口被Java”<font color="red">首次主动使用</font>时才初始化他们</p>
 <h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><ul>
 <li>示例1</li>
 </ul>
