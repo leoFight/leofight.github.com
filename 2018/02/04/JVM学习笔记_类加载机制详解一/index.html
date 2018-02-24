@@ -82,15 +82,15 @@
 <meta name="description" content="概述 把描述类的数据从Class文件加载到内存，并对数据进行校验、转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机制。  在java代码中，类型的加载、连接与初始化过程都是在程序运行期间完成的。  提供了更大的灵活性，增加了更多的可能性。   类的加载、连接与初始化 1.加载：查找并加载类的二进制数据  类的加载指的是将类的.class文件中的二进制数据读入到内">
 <meta name="keywords" content="JVM学习笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JVM学习笔记_类的加载、连接与初始化详解一">
-<meta property="og:url" content="http://yoursite.com/2018/02/04/JVM学习笔记_类的加载、连接与初始化详解一/index.html">
+<meta property="og:title" content="JVM学习笔记_类加载机制详解一">
+<meta property="og:url" content="http://yoursite.com/2018/02/04/JVM学习笔记_类加载机制详解一/index.html">
 <meta property="og:site_name" content="leofight blog">
 <meta property="og:description" content="概述 把描述类的数据从Class文件加载到内存，并对数据进行校验、转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机制。  在java代码中，类型的加载、连接与初始化过程都是在程序运行期间完成的。  提供了更大的灵活性，增加了更多的可能性。   类的加载、连接与初始化 1.加载：查找并加载类的二进制数据  类的加载指的是将类的.class文件中的二进制数据读入到内">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9584733-6e0168c0a2c48be4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-02-24T04:22:22.741Z">
+<meta property="og:updated_time" content="2018-02-24T04:23:09.065Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JVM学习笔记_类的加载、连接与初始化详解一">
+<meta name="twitter:title" content="JVM学习笔记_类加载机制详解一">
 <meta name="twitter:description" content="概述 把描述类的数据从Class文件加载到内存，并对数据进行校验、转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机制。  在java代码中，类型的加载、连接与初始化过程都是在程序运行期间完成的。  提供了更大的灵活性，增加了更多的可能性。   类的加载、连接与初始化 1.加载：查找并加载类的二进制数据  类的加载指的是将类的.class文件中的二进制数据读入到内">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/9584733-6e0168c0a2c48be4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/04/JVM学习笔记_类的加载、连接与初始化详解一/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/04/JVM学习笔记_类加载机制详解一/"/>
 
 
 
 
 
-  <title>JVM学习笔记_类的加载、连接与初始化详解一 | leofight blog</title>
+  <title>JVM学习笔记_类加载机制详解一 | leofight blog</title>
   
 
 
@@ -289,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/04/JVM学习笔记_类的加载、连接与初始化详解一/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/04/JVM学习笔记_类加载机制详解一/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="leofight">
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JVM学习笔记_类的加载、连接与初始化详解一</h1>
+          <h1 class="post-title" itemprop="name headline">JVM学习笔记_类加载机制详解一</h1>
         
 
         <div class="post-meta">
@@ -359,8 +359,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/02/04/JVM学习笔记_类的加载、连接与初始化详解一/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/02/04/JVM学习笔记_类的加载、连接与初始化详解一/" itemprop="commentCount"></span>
+                <a href="/2018/02/04/JVM学习笔记_类加载机制详解一/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/02/04/JVM学习笔记_类加载机制详解一/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -368,7 +368,7 @@
 
           
           
-             <span id="/2018/02/04/JVM学习笔记_类的加载、连接与初始化详解一/" class="leancloud_visitors" data-flag-title="JVM学习笔记_类的加载、连接与初始化详解一">
+             <span id="/2018/02/04/JVM学习笔记_类加载机制详解一/" class="leancloud_visitors" data-flag-title="JVM学习笔记_类加载机制详解一">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
