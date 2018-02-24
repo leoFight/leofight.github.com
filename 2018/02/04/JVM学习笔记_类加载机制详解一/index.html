@@ -88,7 +88,7 @@
 <meta property="og:description" content="概述 把描述类的数据从Class文件加载到内存，并对数据进行校验、转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机制。  在java代码中，类型的加载、连接与初始化过程都是在程序运行期间完成的。  提供了更大的灵活性，增加了更多的可能性。   类的加载、连接与初始化 1.加载：查找并加载类的二进制数据  类的加载指的是将类的.class文件中的二进制数据读入到内">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9584733-6e0168c0a2c48be4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-02-24T04:23:09.065Z">
+<meta property="og:updated_time" content="2018-02-24T04:31:51.945Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM学习笔记_类加载机制详解一">
 <meta name="twitter:description" content="概述 把描述类的数据从Class文件加载到内存，并对数据进行校验、转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机制。  在java代码中，类型的加载、连接与初始化过程都是在程序运行期间完成的。  提供了更大的灵活性，增加了更多的可能性。   类的加载、连接与初始化 1.加载：查找并加载类的二进制数据  类的加载指的是将类的.class文件中的二进制数据读入到内">
@@ -457,7 +457,7 @@
 </li>
 <li><p>被动使用</p>
 <p>① 除了以上七种情况，其他使用Java类的方式都被看作是对类的<font color="red">被动使用</font>，都不会导致类的<font color="red">初始化</font></p>
-<p>② 所有的Java虚拟机实现必须在每个类或接口被Java”<font color="red">首次主动使用</font>时才初始化他们</p>
+<p>② 所有的Java虚拟机实现必须在每个类或接口被Java<font color="red">首次主动使用</font>时才初始化他们</p>
 </li>
 </ol>
 <h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><ul>
@@ -577,6 +577,22 @@
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/24/JVM学习笔记_类加载机制详解二/" rel="prev" title="JVM学习笔记_类加载机制详解二">
+                JVM学习笔记_类加载机制详解二 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
       
       
@@ -656,7 +672,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
