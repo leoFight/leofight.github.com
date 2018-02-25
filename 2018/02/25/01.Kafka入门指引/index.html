@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Kafka学习笔记," />
 
 
 
@@ -79,14 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="输出 Hello world首先下载Kafka，地址http://kafka.apache.org, 目前最新版本是1.0，根据网站的建议，下载Scala 2.11 - kafka_2.11-1.0.0.tgz这版本。 Kafka是严重依赖于ZooKeeper的，通过ZooKeeper来管理各种数据与元数据，因此原则上还需要下载ZooKeeper，不过Kafka 二进制包中也加入ZooKeeper">
+<meta name="keywords" content="Kafka学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="01_Kafka入门指引">
+<meta property="og:url" content="http://yoursite.com/2018/02/25/01.Kafka入门指引/index.html">
 <meta property="og:site_name" content="leofight blog">
+<meta property="og:description" content="输出 Hello world首先下载Kafka，地址http://kafka.apache.org, 目前最新版本是1.0，根据网站的建议，下载Scala 2.11 - kafka_2.11-1.0.0.tgz这版本。 Kafka是严重依赖于ZooKeeper的，通过ZooKeeper来管理各种数据与元数据，因此原则上还需要下载ZooKeeper，不过Kafka 二进制包中也加入ZooKeeper">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-03T06:32:43.316Z">
+<meta property="og:updated_time" content="2018-02-25T01:30:52.216Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
+<meta name="twitter:title" content="01_Kafka入门指引">
+<meta name="twitter:description" content="输出 Hello world首先下载Kafka，地址http://kafka.apache.org, 目前最新版本是1.0，根据网站的建议，下载Scala 2.11 - kafka_2.11-1.0.0.tgz这版本。 Kafka是严重依赖于ZooKeeper的，通过ZooKeeper来管理各种数据与元数据，因此原则上还需要下载ZooKeeper，不过Kafka 二进制包中也加入ZooKeeper">
 
 
 
@@ -116,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/25/01.Kafka入门指引/"/>
 
 
 
 
 
-  <title>tags | leofight blog</title>
+  <title>01_Kafka入门指引 | leofight blog</title>
   
 
 
@@ -271,40 +275,204 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/25/01.Kafka入门指引/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="leofight">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="leofight blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 2 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/JVM学习笔记/" style="font-size: 30px; color: #111">JVM学习笔记</a> <a href="/tags/Kafka学习笔记/" style="font-size: 12px; color: #ccc">Kafka学习笔记</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">01_Kafka入门指引</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-25T09:30:35+08:00">
+                2018-02-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Kafka学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Kafka学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/25/01.Kafka入门指引/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/02/25/01.Kafka入门指引/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/02/25/01.Kafka入门指引/" class="leancloud_visitors" data-flag-title="01_Kafka入门指引">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="输出-Hello-world"><a href="#输出-Hello-world" class="headerlink" title="输出 Hello world"></a>输出 Hello world</h1><p>首先下载Kafka，地址<code>http://kafka.apache.org</code>, 目前最新版本是1.0，根据网站的建议，下载Scala 2.11 - kafka_2.11-1.0.0.tgz这版本。</p>
+<p>Kafka是严重依赖于ZooKeeper的，通过ZooKeeper来管理各种数据与元数据，因此原则上还需要下载ZooKeeper，不过Kafka 二进制包中也加入ZooKeeper的依赖，因此也可以直接使用 Kafka 自带的ZooKeeper。这里下载官网的压缩包，ZooKeeper的地址是:<code>http://zookeeper.apache.org</code>,下载版本为3.4.11。</p>
+<p>解下来将Zookeeper解压缩，将config目录下的zoo_sample.cfg文件备份，然后重命名为 zoo.cfg，修改zoo.cfg配置文件第12行，dataDir（存放数据的目录位置），可以修改为自己机器的任意目录。修改后的样子<code>dataDir=/mydirectory/software/zookeeper-3.4.11/data</code></p>
+<p><strong>启动Zookeeper</strong><br>进入<code>bin</code>目录，执行如下命令<br><code>./zkServer.sh start-foreground</code><br>如有以下输出，则启动成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2018-02-25 07:59:32,416 [myid:] - INFO  [main:ZooKeeperServer@825] - tickTime set to 2000</span><br><span class="line">2018-02-25 07:59:32,417 [myid:] - INFO  [main:ZooKeeperServer@834] - minSessionTimeout set to -1</span><br><span class="line">2018-02-25 07:59:32,417 [myid:] - INFO  [main:ZooKeeperServer@843] - maxSessionTimeout set to -1</span><br><span class="line">2018-02-25 07:59:32,432 [myid:] - INFO  [main:ServerCnxnFactory@117] - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory</span><br><span class="line">2018-02-25 07:59:32,449 [myid:] - INFO  [main:NIOServerCnxnFactory@89] - binding to port 0.0.0.0/0.0.0.0:2181</span><br></pre></td></tr></table></figure></p>
+<p>如有提示权限不足，请给zkServer.sh赋予执行权限，命令如下<br><code>chmod 777 zkServer.sh</code><br>如果提示<code>operation not permitted: ./zkServer.sh</code>,则执行如下命令<br><code>xattr -d com.apple.quarantine zkServer.sh</code></p>
+<p><strong>启动Kafka</strong></p>
+<p>进入Kafka目录，执行如下命令<br><code>bin/kafka-server-start.sh config/server.properties</code><br>如有一下输出，则启动成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[2018-02-25 09:05:34,480] INFO [TransactionCoordinator id=0] Startup complete. (kafka.coordinator.transaction.TransactionCoordinator)</span><br><span class="line">[2018-02-25 09:05:34,591] INFO Creating /brokers/ids/0 (is it secure? false) (kafka.utils.ZKCheckedEphemeral)</span><br><span class="line">[2018-02-25 09:05:34,599] INFO Result of znode creation is: OK (kafka.utils.ZKCheckedEphemeral)</span><br><span class="line">[2018-02-25 09:05:34,601] INFO Registered broker 0 at path /brokers/ids/0 with addresses: EndPoint(bogon,9092,ListenerName(PLAINTEXT),PLAINTEXT) (kafka.utils.ZkUtils)</span><br><span class="line">[2018-02-25 09:05:34,611] INFO Kafka version : 1.0.0 (org.apache.kafka.common.utils.AppInfoParser)</span><br><span class="line">[2018-02-25 09:05:34,611] INFO Kafka commitId : aaa7af6d4a11b29d (org.apache.kafka.common.utils.AppInfoParser)</span><br><span class="line">[2018-02-25 09:05:34,613] INFO [KafkaServer id=0] started (kafka.server.KafkaServer)</span><br></pre></td></tr></table></figure></p>
+<p>如出现<code>permission denied</code>,则进入<code>bin</code>目录执行如下代码：<br><code>chmod 777 *.sh</code></p>
+<p><strong>创建test主题</strong><br>执行如下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test</span><br></pre></td></tr></table></figure></p>
+<p>出现如下提示，则创建成功<br><code>Created topic &quot;test&quot;.</code></p>
+<p><strong>启动生产者</strong></p>
+<p>执行如下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test</span><br></pre></td></tr></table></figure></p>
+<p>出现如下结果，则表示等待输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  kafka_2.11-1.0.0 bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>启动消费者</strong><br>执行如下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning</span><br></pre></td></tr></table></figure></p>
+<p>光标不断闪烁则表示启动成功。</p>
+<p>在生产者窗口输入<code>hello world</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  kafka_2.11-1.0.0 bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test</span><br><span class="line">&gt;hello world</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在消费者窗口查看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  kafka_2.11-1.0.0 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning</span><br><span class="line">hello world</span><br></pre></td></tr></table></figure></p>
+<p>生产者向Kafka发送一条消息，会在消费者窗口输出，说明环境搭建正确。</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Kafka学习笔记/" rel="tag"># Kafka学习笔记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/24/02_JVM学习笔记_类加载机制详解二/" rel="next" title="02_JVM学习笔记_类加载机制详解二">
+                <i class="fa fa-chevron-left"></i> 02_JVM学习笔记_类加载机制详解二
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -340,8 +508,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -405,6 +582,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#输出-Hello-world"><span class="nav-number">1.</span> <span class="nav-text">输出 Hello world</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
